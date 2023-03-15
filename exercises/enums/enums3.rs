@@ -2,9 +2,14 @@
 // Address all the TODOs to make the tests pass!
 // Execute `rustlings hint enums3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+
+use std::convert::TryInto;
 
 enum Message {
+    Move(Point),
+    Echo(String),
+    ChangeColor(i32, i32, i32),
+    Quit,
     // TODO: implement the message variant types based on their usage below
 }
 
@@ -37,6 +42,13 @@ impl State {
     }
 
     fn process(&mut self, message: Message) {
+        match message {
+            Message::Echo(s) => println!("{}", s),
+            Message::ChangeColor(r, g, b) => self.color = ((r.try_into().unwrap(), g.try_into().unwrap(), b.try_into().unwrap())),
+            Message::Move(point) => self.position = point,
+            Message::Quit => self.quit = true,
+            _ => println!("default")
+        }
         // TODO: create a match expression to process the different message variants
         // Remember: When passing a tuple as a function argument, you'll need extra parentheses: fn function((t, u, p, l, e))
     }
