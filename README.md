@@ -1,4 +1,9 @@
-# rustlings 🦀❤️
+# rustlings 🦀
+
+> __NOTE__: _This is only meant to document the progress of learning Rust_
+
+
+---
 
 Greetings and welcome to `rustlings`. This project contains small exercises to get you used to reading and writing Rust code. This includes reading and responding to compiler messages!
 
